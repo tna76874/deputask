@@ -1,0 +1,23 @@
+# DepuTask als Container:
+#
+#   mkdir -p data
+#   DEPUTASK_UID=$(id -u) DEPUTASK_GID=$(id -g) docker compose up -d      →  http://localhost:8080
+#
+# Alle Daten (Datenbank, Sicherungen, eingespielte Aktualisierungen, optional license.lic und
+# config.json) liegen im lokalen Verzeichnis ./data neben dieser Datei – es wird direkt eingebunden
+# (Bind-Mount, kein Docker-Volume) und lässt sich wie jedes Verzeichnis sichern.
+# Der Container läuft mit der Benutzer-ID, der ./data gehört (Standard 1000:1000); dauerhaft
+# festlegen lässt sie sich in einer Datei .env:  DEPUTASK_UID=1000  DEPUTASK_GID=1000
+services:
+  deputask:
+    image: ghcr.io/tna76874/deputask:latest
+    restart: unless-stopped
+    user: "${DEPUTASK_UID:-1000}:${DEPUTASK_GID:-1000}"
+    ports:
+      - "127.0.0.1:8080:8080"   # nur lokal; für das Schulnetz einen Reverse-Proxy mit TLS davorsetzen
+    volumes:
+      - type: bind
+        source: ./data
+        target: /data
+    # environment:
+    #   DEPUTASK_LICENSE_FILE: /data/license.lic

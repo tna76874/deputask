@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "product": "DepuTask",
+  "version": "0.10.0",
+  "schemaVersion": 3,
+  "licenseFormat": 1,
+  "releaseDate": "2026-11-14",
+  "commit": "27aa5b6",
+  "notes": "Schema-Version: **3** · Lizenzformat: **1**\n\n### Neu\n- Lizenzverwaltung: Rechnungen als PDF je Lizenz (fortlaufende Nummern, §-14-Pflichtangaben, Kleinunternehmer-Option),\n  Zahlungen, Mahnungen, Stornorechnungen, Protokoll, CSV-Export; Schema der Lizenzverwaltung 2\n- Inventar der Fremdkomponenten mit Lizenzprüfung (`make third-party`), Lizenztexte eingebettet unter „Über DepuTask“\n- Eigener Lizenzvertrag (EULA, deutsches Recht) als `LICENSE`, unter „Über DepuTask“ einsehbar; Copyright-Hinweise in\n  allen Quelltexten und Programmen aus der zentralen Konfiguration (`make copyright`)\n- Anwendungsweite Konfiguration (`backend/config/config.json`, Überschreiben von `update`/`auth` je Installation)\n- Selbstaktualisierung: Desktop-App ersetzt sich nach Prüfsummen-Check selbst; Container prüfen regelmäßig, zeigen\n  einen Hinweis in der Übersicht und laden neue Versionen in das eingebundene Datenverzeichnis (übersteht Neustarts)\n- `make release`: Programme, `version.json` mit SHA-256 und Docker-Workflow als Commit ohne Historie ins Release-Repo\n- Optionale Anmeldung über OpenID Connect mit Rollen (Administration, Planung, Sekretariat, Lesen) und Benutzerverwaltung\n- Lizenzverwaltung: Lizenztyp „kostenlose Überlassung“ mit Beleg ohne Steuer- und Bankangaben, Vereinbarungen aus\n  Vorlagen (kostenlos/Standard), Schema der Lizenzverwaltung 3\n\n### Geändert\n- Docker-Laufzeit-Images auf `scratch` umgestellt (nur das Binary, keine Betriebssystempakete)\n- Docker: Daten nur im eingebundenen lokalen Verzeichnis `/data` (kein `VOLUME`, Start mit `--user`)\n- Planungsdatenbank Schema 3: Benutzer und Sitzungen (nur mit Anmeldung genutzt)",
+  "files": [
+    {
+      "kind": "desktop",
+      "os": "linux",
+      "arch": "amd64",
+      "path": "builds/deputask-linux-amd64",
+      "size": 18149432,
+      "sha256": "66dc100e19bde01adcefb81ea7279a8e51cc8c791e8f825f89a92e28d04b1243"
+    },
+    {
+      "kind": "server",
+      "os": "linux",
+      "arch": "amd64",
+      "path": "builds/deputask-server-linux-amd64",
+      "size": 15823032,
+      "sha256": "da49781caed1522e1553e283600bf5106dfd190cf905c4dc3ae17ae44a164b4c"
+    },
+    {
+      "kind": "server",
+      "os": "linux",
+      "arch": "arm64",
+      "path": "builds/deputask-server-linux-arm64",
+      "size": 15073464,
+      "sha256": "e35c10e6a0254f45ff765bca8b70c76cf6684b68bb72cbf5da6a758050fabb6d"
+    },
+    {
+      "kind": "desktop",
+      "os": "windows",
+      "arch": "amd64",
+      "path": "builds/deputask-windows-amd64.exe",
+      "size": 18762752,
+      "sha256": "80b17d8093bb8e08b6bfefbc8e731ee9bd4fe5cde8800ed5ae9842bf72c50d21"
+    },
+    {
+      "kind": "server",
+      "os": "windows",
+      "arch": "amd64",
+      "path": "builds/deputask-server-windows-amd64.exe",
+      "size": 16259072,
+      "sha256": "ed9586c0d2bfbf6162a00c053d4ef995ce20aee93efc289401f72ef3b15f6a09"
+    },
+    {
+      "kind": "desktop",
+      "os": "windows",
+      "arch": "arm64",
+      "path": "builds/deputask-windows-arm64.exe",
+      "size": 17707008,
+      "sha256": "ba9d711ec0b44f5c2d5ed6f111836354289e8b77e114897e9b8a3b55391ec8d1"
+    },
+    {
+      "kind": "server",
+      "os": "windows",
+      "arch": "arm64",
+      "path": "builds/deputask-server-windows-arm64.exe",
+      "size": 15305728,
+      "sha256": "fa1ba5abf557622cc735b4c9930a2f9b2cc16a38705b8d682c41b776e9f12a05"
+    },
+    {
+      "kind": "server",
+      "os": "darwin",
+      "arch": "amd64",
+      "path": "builds/deputask-server-darwin-amd64",
+      "size": 16195632,
+      "sha256": "9a4c10d53c91c5aac777972c5607a30dc2112bf305724005ca571b03a41745ff"
+    },
+    {
+      "kind": "server",
+      "os": "darwin",
+      "arch": "arm64",
+      "path": "builds/deputask-server-darwin-arm64",
+      "size": 15549458,
+      "sha256": "c16699b8b1fb67a3cf895cac763034174ffa9ef0037cf9579d442622f4671a88"
+    }
+  ]
+}

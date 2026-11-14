@@ -1,0 +1,107 @@
+# Baut aus dem veröffentlichten Server-Programm (builds/deputask-server-linux-<arch>) das
+# Container-Image und veröffentlicht es in der GitHub Container Registry:
+#   ghcr.io/<owner>/<repo>:<version>  und  :latest (nur für Versionen ohne Vorab-Kennung)
+# Läuft erst, wenn "Test Executable Starts" (test-builds.yml) für den Push eines Releases erfolgreich war –
+# ein Release, dessen Programme die Tests nicht bestehen, wird nicht als Image veröffentlicht.
+# Gebaut wird ausschließlich aus den fertigen Programmen in builds/ (kein Quelltext im Repository).
+name: Docker-Image
+
+on:
+  workflow_run:
+    workflows: ["Test Executable Starts"]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: docker-image
+  cancel-in-progress: true
+
+env:
+  IMAGE: ghcr.io/${{ github.repository }}
+
+jobs:
+  image:
+    # nur nach erfolgreichen Tests (oder von Hand gestartet)
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # genau der getestete Stand
+          ref: ${{ github.event.workflow_run.head_sha || github.sha }}
+
+      - name: Version lesen, Prüfsummen der Programme gegen version.json prüfen
+        id: meta
+        run: |
+          set -eu
+          version=$(jq -er .version version.json)
+          jq -er '.files[] | select(.kind == "server" and .os == "linux") | "\(.sha256)  \(.path)"' version.json > /tmp/sums
+          test "$(wc -l < /tmp/sums)" -ge 2   # amd64 und arm64
+          sha256sum -c /tmp/sums
+          image=$(echo "$IMAGE" | tr '[:upper:]' '[:lower:]')
+          tags="$image:$version"
+          case "$version" in *-*) ;; *) tags="$tags,$image:latest" ;; esac
+          {
+            echo "version=$version"
+            echo "image=$image"
+            echo "tags=$tags"
+            echo "commit=$(jq -r '.commit // ""' version.json)"
+            echo "date=$(jq -r .releaseDate version.json)"
+          } >> "$GITHUB_OUTPUT"
+
+      - uses: docker/setup-buildx-action@v3
+
+      - name: Image für den Test bauen (amd64)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64
+          load: true
+          tags: deputask:test
+
+      - name: Image testen (startet mit eingebundenem Datenverzeichnis, meldet die Version aus version.json)
+        run: |
+          set -eu
+          mkdir -p data
+          docker run -d --name deputask --user "$(id -u):$(id -g)" -p 127.0.0.1:8080:8080 -v "$PWD/data:/data" deputask:test -demo
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8080/api/health > /tmp/health.json; then break; fi
+            sleep 1
+          done
+          cat /tmp/health.json
+          test "$(jq -r .version /tmp/health.json)" = "${{ steps.meta.outputs.version }}"
+          test "$(jq -r .status /tmp/health.json)" = "ok"
+          test "$(docker inspect -f '{{.Config.User}}' deputask:test)" = "10001:10001"   # Standard ohne --user: nicht root
+          test -f data/deputask.db                                                      # Daten liegen im eingebundenen Verzeichnis
+          test "$(stat -c %u data/deputask.db)" = "$(id -u)"
+          curl -fsS http://127.0.0.1:8080/api/update | jq -e '.mode == "datadir" and .canRestart'
+          curl -fsS http://127.0.0.1:8080/ | grep -qi '<div id="app"'
+          docker logs deputask
+          docker rm -f deputask
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image bauen und veröffentlichen (amd64 + arm64)
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: |
+            org.opencontainers.image.title=DepuTask
+            org.opencontainers.image.description=DepuTask – Deputatsplanung für Schulen (Server)
+            org.opencontainers.image.version=${{ steps.meta.outputs.version }}
+            org.opencontainers.image.created=${{ steps.meta.outputs.date }}
+            org.opencontainers.image.revision=${{ steps.meta.outputs.commit }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.licenses=LicenseRef-DepuTask-EULA

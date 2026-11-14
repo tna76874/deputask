@@ -1,0 +1,145 @@
+DepuTask – Endbenutzer-Lizenzvertrag (EULA)
+Version 1.1
+
+Copyright (c) 2026 Lukas Meyer-Hilberg. Alle Rechte vorbehalten.
+
+DepuTask ist proprietäre Software. Sie wird ausschließlich in kompilierter Form
+(Objektcode) überlassen. Dieser Vertrag regelt die Nutzung zwischen dem
+Rechteinhaber (Lukas Meyer-Hilberg, im Folgenden „Lizenzgeber“) und der Schule bzw.
+ihrem Träger (im Folgenden „Lizenznehmer“).
+
+Diese Bedingungen sind KEINE Open-Source-Lizenz und kein Angebot an die
+Allgemeinheit. Wer die Software lediglich herunterlädt, erhält dadurch nur die
+in § 2 Abs. 3 genannten Befugnisse. Ein weitergehendes Nutzungsrecht entsteht
+erst durch eine Vereinbarung mit dem Lizenzgeber (Bestellung, Angebot oder
+Überlassungsvereinbarung) und die dazu ausgestellte Lizenzdatei; diese
+Bedingungen sind Bestandteil dieser Vereinbarung. Bei Widersprüchen geht die
+individuell geschlossene Vereinbarung diesen Bedingungen vor.
+
+§ 1 Gegenstand
+
+(1) Gegenstand ist die Software DepuTask einschließlich der zugehörigen
+    Dokumentation und aller vom Lizenzgeber bereitgestellten Aktualisierungen.
+(2) Die Software wird lizenziert, nicht verkauft. Alle Rechte, die dieser
+    Vertrag nicht ausdrücklich einräumt, verbleiben beim Lizenzgeber.
+
+§ 2 Nutzungsrecht
+
+(1) Der Lizenzgeber räumt dem Lizenznehmer ein einfaches (nicht
+    ausschließliches), nicht übertragbares und nicht unterlizenzierbares Recht
+    ein, die Software für die eigene Deputats- und Unterrichtsplanung der in
+    der Lizenzdatei genannten Schule zu nutzen.
+(2) Das Nutzungsrecht ist auf den in der Lizenzdatei genannten Zeitraum
+    befristet. Die Lizenzdatei (signierter Lizenzschlüssel) ist Bestandteil
+    dieses Vertrags. Die Software darf innerhalb der lizenzierten Schule auf
+    beliebig vielen Arbeitsplätzen installiert werden.
+(3) Ohne gültige Lizenzdatei darf die Software ausschließlich im Lesemodus
+    genutzt werden: zur Ansicht und zum Export vorhandener Daten sowie zum
+    Ausprobieren mit den mitgelieferten Beispieldaten. Diese Befugnis ist
+    unentgeltlich, jederzeit für die Zukunft widerruflich und begründet
+    keinen Anspruch auf Erteilung einer Lizenz.
+(4) Der Lizenzgeber kann die Software entgeltlich oder unentgeltlich
+    („kostenlose Überlassung“) überlassen. Für beide Fälle gelten diese
+    Bedingungen; ergänzend gilt die jeweils geschlossene Vereinbarung.
+
+§ 3 Beschränkungen
+
+Soweit nicht zwingendes Recht oder dieser Vertrag es ausdrücklich erlauben,
+ist es dem Lizenznehmer nicht gestattet,
+
+ a) die Software oder die Lizenzdatei an Dritte weiterzugeben, zu vermieten,
+    zu verleihen, öffentlich zugänglich zu machen oder Dritten Unterlizenzen
+    einzuräumen;
+ b) die Software zu dekompilieren, zu disassemblieren, zurückzuentwickeln
+    (Reverse Engineering) oder auf andere Weise den Quelltext zu ermitteln.
+    Die gesetzlichen Befugnisse nach §§ 69d Abs. 2 und 3, 69e UrhG bleiben
+    unberührt; Informationen zur Herstellung der Interoperabilität sind
+    zunächst beim Lizenzgeber anzufragen;
+ c) die Software zu verändern, zu bearbeiten oder abgeleitete Werke zu
+    erstellen;
+ d) die Lizenzprüfung oder andere technische Schutzmaßnahmen zu umgehen, zu
+    entfernen oder zu manipulieren;
+ e) Urheberrechts-, Marken- oder Lizenzhinweise zu entfernen oder zu verändern.
+
+§ 4 Kein Quelltext
+
+Der Quelltext der Software ist Geschäftsgeheimnis des Lizenzgebers. Ein
+Anspruch auf Herausgabe, Einsicht oder Hinterlegung des Quelltextes besteht
+nicht. Die Bereitstellung der Programme über ein öffentliches Verzeichnis
+(z. B. zum Herunterladen von Aktualisierungen) stellt keine Veröffentlichung
+unter einer Open-Source-Lizenz dar.
+
+§ 5 Komponenten Dritter
+
+Die Software enthält Open-Source-Komponenten Dritter. Für diese gelten
+vorrangig deren Lizenzbedingungen; sie sind in der Software unter „Über
+DepuTask“ einsehbar und liegen der Auslieferung als
+THIRD_PARTY_NOTICES.txt bei. Die Beschränkungen dieses Vertrags gelten für
+diese Komponenten nur, soweit deren Lizenzen dem nicht entgegenstehen.
+
+§ 6 Aktualisierungen
+
+(1) Ein Anspruch auf Aktualisierungen, Weiterentwicklung oder Support besteht
+    nur, soweit dies gesondert vereinbart ist.
+(2) Die Software kann prüfen, ob eine neue Version verfügbar ist. Dabei wird
+    eine Versionsdatei von einem Server des Lizenzgebers bzw. dessen
+    Dienstleisters abgerufen; technisch bedingt wird dabei die IP-Adresse des
+    abrufenden Rechners übermittelt. Planungs- oder Personendaten werden nicht
+    übertragen. Die Prüfung kann in der Konfiguration abgeschaltet werden.
+
+§ 7 Daten und Datenschutz
+
+Die Software verarbeitet die Daten des Lizenznehmers ausschließlich lokal
+bzw. auf den vom Lizenznehmer betriebenen Systemen. Der Lizenzgeber erhält
+keinen Zugriff auf diese Daten. Für die Rechtmäßigkeit der Verarbeitung
+personenbezogener Daten und für regelmäßige Datensicherungen ist der
+Lizenznehmer verantwortlich.
+
+§ 8 Gewährleistung und Haftung
+
+(1) Bei entgeltlicher Überlassung auf Zeit ist die verschuldensunabhängige
+    Haftung des Lizenzgebers für bereits bei Vertragsschluss vorhandene
+    Mängel (§ 536a Abs. 1 Alt. 1 BGB) ausgeschlossen. Mängel sind dem
+    Lizenzgeber in Textform anzuzeigen; er darf sie nach seiner Wahl durch
+    Fehlerbehebung, eine neue Programmversion oder eine zumutbare
+    Umgehungslösung beseitigen.
+(2) Der Lizenzgeber haftet unbeschränkt bei Vorsatz und grober Fahrlässigkeit,
+    bei Verletzung von Leben, Körper oder Gesundheit, nach dem
+    Produkthaftungsgesetz sowie im Umfang einer übernommenen Garantie.
+(3) Bei leicht fahrlässiger Verletzung einer wesentlichen Vertragspflicht
+    (einer Pflicht, deren Erfüllung die ordnungsgemäße Durchführung des
+    Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der
+    Lizenznehmer regelmäßig vertrauen darf) ist die Haftung auf den
+    vertragstypischen, vorhersehbaren Schaden begrenzt. Im Übrigen ist die
+    Haftung für leichte Fahrlässigkeit ausgeschlossen.
+(4) Für den Verlust von Daten haftet der Lizenzgeber im Rahmen von Abs. 3
+    nur in Höhe des Aufwands, der bei ordnungsgemäßer, regelmäßiger
+    Datensicherung durch den Lizenznehmer für die Wiederherstellung
+    erforderlich wäre.
+(5) Bei unentgeltlicher Überlassung (einschließlich der Nutzung nach § 2
+    Abs. 3) haftet der Lizenzgeber abweichend von Abs. 1, 3 und 4 nur für Vorsatz und grobe Fahrlässigkeit sowie für arglistig
+    verschwiegene Mängel (§§ 521, 523, 524, 599, 600 BGB).
+(6) Die Ergebnisse der Software (insbesondere automatische Verteilungen und
+    Berechnungen) sind Planungsvorschläge und vom Lizenznehmer vor ihrer
+    Verwendung zu prüfen.
+
+§ 9 Laufzeit und Beendigung
+
+(1) Der Vertrag endet mit Ablauf des lizenzierten Zeitraums, sofern er nicht
+    verlängert wird. Nach Ablauf bleibt die Nutzung im Lesemodus (§ 2 Abs. 3)
+    zulässig.
+(2) Der Lizenzgeber kann den Vertrag aus wichtigem Grund fristlos kündigen,
+    insbesondere bei einem Verstoß gegen § 3.
+
+§ 10 Schlussbestimmungen
+
+(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des
+    UN-Kaufrechts.
+(2) Ist der Lizenznehmer Kaufmann, juristische Person des öffentlichen
+    Rechts oder öffentlich-rechtliches Sondervermögen, ist ausschließlicher
+    Gerichtsstand der Sitz des Lizenzgebers.
+(3) Änderungen und Ergänzungen bedürfen der Textform. Abweichende
+    Bedingungen des Lizenznehmers gelten nur, wenn der Lizenzgeber ihnen
+    ausdrücklich in Textform zugestimmt hat.
+(4) Sollte eine Bestimmung unwirksam sein oder werden, bleibt die Wirksamkeit
+    der übrigen Bestimmungen unberührt.
