@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "product": "DepuTask",
+  "version": "0.11.3",
+  "schemaVersion": 6,
+  "licenseFormat": 1,
+  "releaseDate": "2026-11-15",
+  "commit": "940be25",
+  "files": [
+    {
+      "kind": "desktop",
+      "os": "linux",
+      "arch": "amd64",
+      "path": "builds/deputask-linux-amd64",
+      "size": 19096760,
+      "sha256": "b3f41525333027499ae9d6cf6822b9a56448697638bc4a16eac40593d7c67b35"
+    },
+    {
+      "kind": "server",
+      "os": "linux",
+      "arch": "amd64",
+      "path": "builds/deputask-server-linux-amd64",
+      "size": 16761016,
+      "sha256": "66c38b0c3882d49f4a693458a30cbac1205e7302d1086c1e8d81d32b3b1d92cd"
+    },
+    {
+      "kind": "server",
+      "os": "linux",
+      "arch": "arm64",
+      "path": "builds/deputask-server-linux-arm64",
+      "size": 15990968,
+      "sha256": "bbd5f68c21398dd170ece5f4f80c0e8e2f16fc850bf37db3bb157bfa41d374d2"
+    },
+    {
+      "kind": "desktop",
+      "os": "windows",
+      "arch": "amd64",
+      "path": "builds/deputask-windows-amd64.exe",
+      "size": 19731968,
+      "sha256": "7de2cfc4daef37612902fe5519b708c8737596ddfca57634ecf0e845b54a3f9c"
+    },
+    {
+      "kind": "server",
+      "os": "windows",
+      "arch": "amd64",
+      "path": "builds/deputask-server-windows-amd64.exe",
+      "size": 17203712,
+      "sha256": "dae6bac7fcad987fcd96a855335449ec94f0c54f11de14781fecf523b0c5307a"
+    },
+    {
+      "kind": "desktop",
+      "os": "windows",
+      "arch": "arm64",
+      "path": "builds/deputask-windows-arm64.exe",
+      "size": 18588160,
+      "sha256": "6894427267f90b8f320f7c071800cd777c1099a8708130a00b5dfe29a365cde5"
+    },
+    {
+      "kind": "server",
+      "os": "windows",
+      "arch": "arm64",
+      "path": "builds/deputask-server-windows-arm64.exe",
+      "size": 16162304,
+      "sha256": "1b52cb6742257e5d505dba7833a8392a58582f2c254669ec122f7fb8439fe07b"
+    },
+    {
+      "kind": "server",
+      "os": "darwin",
+      "arch": "amd64",
+      "path": "builds/deputask-server-darwin-amd64",
+      "size": 17143392,
+      "sha256": "245053250c1c2c0097a56c45a5553335c20f1563f016f54dcc695cffdc5112b8"
+    },
+    {
+      "kind": "server",
+      "os": "darwin",
+      "arch": "arm64",
+      "path": "builds/deputask-server-darwin-arm64",
+      "size": 16417954,
+      "sha256": "dd2c47e7a351dccc6ef7ea2126bd10ff32cb8cbeaf1a8c040c53d77354b8eb9e"
+    }
+  ]
+}

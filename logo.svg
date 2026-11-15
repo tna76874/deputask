@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="DepuTask">
+  <!--
+    DepuTask-Logo – die EINZIGE Quelle. Alle anderen Logo-Dateien werden beim Bauen daraus erzeugt
+    (make logo, siehe branding/README.md). Hier ändern, nirgends sonst.
+    Für das Rastern der Desktop-Icons (oksvg) nur path und linearGradient (Einheiten relativ zur Form)
+    verwenden – kein rect mit rx, kein clipPath, keine Masken, keine Filter, kein Text.
+    Motiv: ein „D“ aus Strich und vier Stundenbalken, deren Enden den Bogen des D bilden;
+    der bernsteinfarbene Balken steht für zugewiesene Stunden.
+  -->
+  <defs>
+    <linearGradient id="dt-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#23809f"/>
+      <stop offset="1" stop-color="#185a72"/>
+    </linearGradient>
+  </defs>
+  <path d="M14 0H50A14 14 0 0 1 64 14V50A14 14 0 0 1 50 64H14A14 14 0 0 1 0 50V14A14 14 0 0 1 14 0Z" fill="url(#dt-bg)"/>
+  <path d="M17 14H22V50H17A3 3 0 0 1 14 47V17A3 3 0 0 1 17 14Z" fill="#ffffff"/>
+  <path d="M27 14H32A18 18 0 0 1 45.42 20H27A1.5 1.5 0 0 1 25.5 18.5V15.5A1.5 1.5 0 0 1 27 14Z" fill="#ffffff"/>
+  <path d="M27 24H48.12A18 18 0 0 1 49.89 30H27A1.5 1.5 0 0 1 25.5 28.5V25.5A1.5 1.5 0 0 1 27 24Z" fill="#ffffff"/>
+  <path d="M27 34H49.89A18 18 0 0 1 48.12 40H27A1.5 1.5 0 0 1 25.5 38.5V35.5A1.5 1.5 0 0 1 27 34Z" fill="#f5a524"/>
+  <path d="M27 44H45.42A18 18 0 0 1 32 50H27A1.5 1.5 0 0 1 25.5 48.5V45.5A1.5 1.5 0 0 1 27 44Z" fill="#ffffff"/>
+</svg>
